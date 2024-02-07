@@ -1,0 +1,24 @@
+<odoo>
+    <data>
+        <record id="view_pokemon_list" model="ir.ui.view">
+            <field name="name">pokemon_custom.form</field>
+            <field name="model">pokemon.list</field>
+            <field name="arch" type="xml">
+                <tree string="Pokemon">
+                    <field name="name"/>
+                    <field name="pokemon_name"/>
+                    <field name="game_versions"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="pokemon_custom.action_window_pokemon">
+            <field name="name">List Pokemon</field>
+            <field name="res_model">pokemon.list</field>
+            <field name="view_mode">tree</field>
+        </record>
+
+        <menuitem id="pokemon_custom.menu" name="Pokemon List" sequence="1" web_icon="pokemon_custom,static/description/icon.png" action="pokemon_custom.action_window_pokemon"/>
+
+    </data>
+</odoo>
